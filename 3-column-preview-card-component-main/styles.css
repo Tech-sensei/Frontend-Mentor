@@ -1,0 +1,242 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --bg-color-orange: hsl(31, 77%, 52%);
+    --bg-color-dark-cyan: hsl(184, 100%, 22%);
+    --bg-color-darken-cyan: hsl(179, 100%, 13%);
+    --text-color: hsla(0, 0%, 100%, 0.75);
+    --title-color: hsl(0, 0%, 95%);
+
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    /* --body-font: 'Big Shoulders Display',cursive; */
+    --body-font: ' Lexend Deca', sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .938rem;
+
+
+    /*========== Font weight ==========*/
+    --font-medium: 400;
+    --font-bold: 700;
+
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+    :root {
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1.2rem;
+        --small-font-size: .875rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,
+h2 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*=============== MAIN STYLES ===============*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.header-title {
+    font-weight: var(--font-bold);
+    font-size: 2rem;
+    font-family: 'Big Shoulders Display', cursive;
+    border-bottom: 1px solid black;
+}
+
+/*=============== MAIN STYLES ===============*/
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin: 10rem 0 0 0;
+}
+
+
+.card__wrapper--components {
+    height: 70%;
+    width: 70%;
+    background-color: var(--bg-color-dark-cyan);
+    border-radius: 1rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card__contents {
+    padding: 4rem;
+    height: 100%;
+}
+
+.card__contents--heading {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 4rem 0 3rem;
+    color: var(--title-color);
+}
+
+.card__contents--description {
+    line-height: 1.5;
+    word-spacing: 2px;
+    font-size: var(--h2-font-size);
+    margin: 3rem 0;
+    color: var(--text-color);
+}
+
+.card__contents--btn {
+    border: 2px solid transparent;
+    outline: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: var(--font-bold);
+    cursor: pointer;
+    margin: 5rem 0 2rem 0;
+}
+
+.card__contents--btn:hover {
+    border: 2px solid var(--title-color);
+    color: var(--title-color);
+    background: transparent;
+}
+
+.sedans-btn {
+    color: var(--bg-color-orange);
+}
+
+.suv-btn {
+    color: var(--bg-color-dark-cyan);
+}
+
+.luxury-btn {
+    color: var(--bg-color-darken-cyan);
+}
+
+.Sedans,
+.SUV,
+.Luxury {
+    height: 100%;
+    width: 100%;
+}
+
+.Sedans {
+    border-top-left-radius: .8rem;
+    border-bottom-left-radius: .8rem;
+    background-color: var(--bg-color-orange);
+}
+
+.SUV {
+    background-color: var(--bg-color-dark-cyan);
+}
+
+.Luxury {
+    border-top-right-radius: .8rem;
+    border-bottom-right-radius: .8rem;
+    background-color: var(--bg-color-darken-cyan);
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 70%;
+    }
+
+    .header-title {
+        font-size: var(--h2-font-size);
+    }
+
+    .card__wrapper--components {
+        grid-template-columns: repeat(1, 1fr);
+        height: 60%;
+        width: 80%;
+    }
+
+    .Sedans {
+        border-top-left-radius: .8rem;
+        border-top-right-radius: .8rem;
+        background-color: var(--bg-color-orange);
+    }
+
+    .Luxury {
+        border-bottom-right-radius: .8rem;
+        border-bottom-left-radius: .8rem;
+        border-top-right-radius: 0rem;
+        background-color: var(--bg-color-darken-cyan);
+    }
+}
+
+/*=============== FOOTER STYLES ===============*/
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.attribution {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    color: var(--bg-color-darken-cyan);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: underline;
+}
